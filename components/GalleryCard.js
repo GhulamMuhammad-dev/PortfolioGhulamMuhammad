@@ -46,7 +46,7 @@ export default function GalleryCard({ item }) {
           width={800}
           height={1000}
           quality={90} // 🔥 better quality
-          loading="lazy"
+          loading={item.loading}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105"
         />
