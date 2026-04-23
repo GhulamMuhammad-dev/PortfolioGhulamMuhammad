@@ -172,7 +172,7 @@ export const galleryItems = [
     type: "image",
     src: "/gallery/superDump.webp",
     alt: "Daily work 2",
-    loading: "lazy",
+    loading: "eager",
   },
   {
     id: "26",
