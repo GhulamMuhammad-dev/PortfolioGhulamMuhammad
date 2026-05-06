@@ -1,7 +1,24 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import localFont from 'next/font/local'
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+
+const myFont = localFont({
+  src: [
+    {
+      path: "../public/fonts/satoshi/Satoshi-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/satoshi/Satoshi-Bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-myfont",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,7 +39,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased bg-sky-100`}
+      className={myFont.variable}
     >
       <body className="min-h-full flex flex-col bg-sky-100">
         <Navbar />

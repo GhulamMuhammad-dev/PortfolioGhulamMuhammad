@@ -3,7 +3,7 @@ import { works } from "@/data/works";
 
 export default function WorkSection() {
   return (
-    <section className="max-w-full mx-auto px-16 py-4 mb-8">
+    <section className="bg-accent-blue max-w-full mx-auto px-16 py-4 mb-8">
       <h2 className="text-3xl font-bold mb-10 text-black/80">Work</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

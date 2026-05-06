@@ -18,12 +18,12 @@ const Hero = () => {
 
 
   return (
-    <div className='min-h-screen bg-sky-100 max-w-full mx-auto px-16 py-4 flex items-center' ref={textRef}>
+    <section className=' border-2 border-accent-blue min-h-screen bg-white max-w-full mx-auto px-16  flex items-center' >
       
-      <h1 className='text-black text-5xl'>I love creating connection between <br></br> brands and games with their target Audiance </h1>
+      <h1 ref={textRef}  className='max-w-4/6 font-sans  text-accent-blue text-6xl  leading-tight'>Turning Complex Products Into <span className="text-primary-blue font-bold"> Visually Compelling </span> Brand Experiences.</h1>
 
 
-    </div>
+    </section>
   )
 }
 
