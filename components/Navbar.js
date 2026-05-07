@@ -63,6 +63,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <div ref={ImgRef} className="p-4">
+          <Link href="/">
           <Image
             src="/Images/myPortfolioIcon.png"
             alt="my logo"
@@ -71,6 +72,7 @@ export default function Navbar() {
             loading="lazy"
             className="w-full h-auto object-cover"
           />
+          </Link>
         </div>
 
         {/* Desktop Links */}

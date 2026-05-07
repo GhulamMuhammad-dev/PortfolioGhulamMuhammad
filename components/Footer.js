@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-sky-black backdrop-blur-md border-b border-white/10  ">
+    <footer className="w-full bg-accent-blue font-sans ">
       
       
         <div className="max-w-full mx-auto px-16 py-44 flex flex-col md:flex-row items-start md:items-center md:justify-between ">
@@ -29,10 +29,9 @@ export default function Footer() {
 
         {/* Contact Message */}
         <div className="max-w-md">
-          <p className="text-gray-300 text-sm leading-relaxed">
-            I’m always open to working on creative projects, especially in web,
-            games, and motion design. If you have an idea or opportunity, feel
-            free to reach out.
+          <h1 className="font-bold text-4xl py-2">Let’s Build Something Exceptional</h1>
+          <p className="text-gray-300 text-lg leading-relaxed py-2 ">
+            If you’re looking for premium motion design and 3D visuals that elevate your brand and communicate your product clearly <span className="font-bold text-primary-blue">let’s talk </span>.
           </p>
 
           {/* Email */}
