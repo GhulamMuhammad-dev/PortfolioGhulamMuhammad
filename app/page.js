@@ -6,7 +6,7 @@ const page = () => {
   return (
     <div className='bg-white'>
       <Hero />
-      <WorkSection />
+   
     </div>
   )
 }

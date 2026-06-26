@@ -13,7 +13,7 @@ export default function AboutPage() {
     },
     {
       name: "Linkedin",
-      href: "https://linkedin.com/in/yourusername",
+      href: "https://linkedin.com/in/ghulammuhammad-ta",
 
     },
     {
@@ -59,10 +59,19 @@ export default function AboutPage() {
           </div>
 
           <p className="font-sans  text-accent-blue/80  text-lg leading-relaxed">
-            I’m a <span className="font-bold">3D Motion Designer</span> and <span className=" font-bold">Indie Game Developer</span> focused on creating <span className=" font-bold">visually compelling experiences</span> that blend storytelling, design, and technology.<br></br>
-            My background in interactive systems and real-time development gives me a unique perspective on motion design allowing me to create work that is not only visually polished, but immersive, intentional, and strategically built for <span className=" font-bold">modern digital brands</span>.
+            I am a multidisciplinary Creative Technologist specializing in 3D motion design, visual storytelling, and audience-centered experiences.<br></br>
+<br></br>
+            My work sits at the intersection of creativity, strategy, and technology. I combine 3D design, animation, motion graphics, video production, and visual communication to transform complex ideas into engaging and meaningful experiences.<br></br>
+            <br></br>
 
-            I partner with startups, agencies, and forward-thinking companies to help them communicate their ideas through premium visual storytelling.
+            With expertise in Blender, Unreal Engine, After Effects, and DaVinci Resolve, I contribute across the entire creative pipeline from audience research and creative strategy to concept development, art direction, animation, and final delivery. I believe great visuals should do more than look impressive; they should communicate clearly, connect with audiences, and support business objectives.<br></br>
+            <br></br>
+
+            I enjoy collaborating with startups, studios, and product teams to create brand films, product visuals, marketing campaigns, and immersive digital experiences that blend cinematic quality with strategic thinking.<br></br>
+            <br></br>
+
+            My goal is to bridge the gap between business goals, user needs, and creative execution building work that not only captures attention but creates lasting impact.
+
           </p>
 
           {/* Social Links */}

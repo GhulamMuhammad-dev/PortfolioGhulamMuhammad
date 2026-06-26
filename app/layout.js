@@ -4,21 +4,28 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const myFont = localFont({
+const Akira = localFont({
   src: [
     {
-      path: "../public/fonts/satoshi/Satoshi-Regular.otf",
+      path: "../public/fonts/Akira/Akira Expanded Demo.otf",
+      weight: "700",
+      style: "bold",
+    },
+  ],
+  variable: "--font-Akira",
+});
+
+const NeueMontreal = localFont({
+  src: [
+    {
+      path: "../public/fonts/NeueMontreal/NeueMontreal-Regular.otf",
       weight: "400",
       style: "normal",
     },
-    {
-      path: "../public/fonts/satoshi/Satoshi-Bold.otf",
-      weight: "700",
-      style: "normal",
-    },
   ],
-  variable: "--font-myfont",
+  variable: "--font-NeueMontreal",
 });
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,12 +46,12 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={myFont.variable}
+      className={`${Akira.variable} ${NeueMontreal.variable}`}
     >
       <body className="min-h-full flex flex-col bg-sky-100">
-        <Navbar />
+       
         {children}
-        <Footer/>
+       <Footer/>
         </body>
     </html>
   );

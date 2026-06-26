@@ -9,7 +9,8 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  --font-sans: var(--font-myfont);
+  --font-Akira: var(--font-Akira);
+  --font-NeueMontreal: var(--font-NeueMontreal);
   --font-mono: var(--font-geist-mono);
 
   --color-debug-red: #ff2d55;

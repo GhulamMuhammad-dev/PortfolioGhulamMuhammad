@@ -82,7 +82,7 @@ export default function Navbar() {
               key={item.name}
               ref={(el) => (linksRef.current[i] = el)}
               href={item.href}
-              className="relative group"
+              className="relative group font-NeueMontreal "
             >
               {item.name}
               <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
