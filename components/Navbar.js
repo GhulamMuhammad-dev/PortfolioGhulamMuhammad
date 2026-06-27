@@ -1,117 +1,58 @@
-"use client";
+'use client';
 
-import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { gsap } from "gsap";
+import React, { useRef } from 'react';
+import { FaLinkedinIn, FaXTwitter, FaInstagram } from 'react-icons/fa6';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 
-export default function Navbar() {
-  const navRef = useRef(null);
-  const ImgRef = useRef(null);
- const linksRef = useRef([]);
-  const mobileMenuRef = useRef(null);
+export default function Navbar({ isOpen, setIsOpen }) {
+  const menuRef = useRef(null);
+  const { contextSafe } = useGSAP({ scope: menuRef });
 
-  const [isOpen, setIsOpen] = useState(false);
+  // Handle push-down accordion animation on mobile
+  const toggleMenu = contextSafe(() => {
+    const nextState = !isOpen;
+    setIsOpen(nextState);
 
-  useEffect(() => {
-    gsap.from(navRef.current, {
-      y: 0,
-      duration: 0.8,
-      ease: "power3.out",
+    gsap.to(menuRef.current, {
+      height: nextState ? 'auto' : 0,
+      duration: 0.5,
+      ease: 'power3.inOut',
     });
-
-    gsap.from(linksRef.current, {
-      opacity: 0,
-      y: -20,
-      stagger: 0.15,
-      delay: 0.3,
-      duration: 0.6,
-      ease: "power2.out",
-    });
-  }, []);
-
-  useEffect(() => {
-    if (isOpen) {
-      gsap.to(mobileMenuRef.current, {
-        height: "auto",
-        opacity: 1,
-        duration: 0.4,
-        ease: "power2.out",
-      });
-    } else {
-      gsap.to(mobileMenuRef.current, {
-        height: 0,
-        opacity: 0,
-        duration: 0.3,
-        ease: "power2.in",
-      });
-    }
-  }, [isOpen]);
-
-  const navLinks = [
-    { name: "Work", href: "/" },
-    { name: "Gallery", href: "/gallery" },
-    { name: "About", href: "/about" },
-  ];
+  });
 
   return (
-    <nav
-      ref={navRef}
-      className="w-full bg-white backdrop-blur-md border-b border-white/10"
-    >
-      <div className="max-w-full mx-auto px-16 py-4 flex items-center justify-between">
-
-        {/* Logo */}
-        <div ref={ImgRef} className="p-4">
-          <Link href="/">
-          <Image
-            src="/Images/myPortfolioIcon.png"
-            alt="my logo"
-            width={150}
-            height={150}
-            loading="lazy"
-            className="w-full h-auto object-cover"
-          />
-          </Link>
+    <header className="w-full bg-[#032e2a] text-white relative z-50">
+      {/* Top Utility Row */}
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        {/* Social Icons Badge */}
+        <div className="flex items-center gap-4 bg-white/10 px-4 py-2 rounded-md backdrop-blur-md">
+          <a href="#" className="hover:text-[#82b48c] transition-colors"><FaLinkedinIn className="w-3.5 h-3.5" /></a>
+          <a href="#" className="hover:text-[#82b48c] transition-colors"><FaXTwitter className="w-3.5 h-3.5" /></a>
+          <a href="#" className="hover:text-[#82b48c] transition-colors"><FaInstagram className="w-3.5 h-3.5" /></a>
         </div>
 
-        {/* Desktop Links */}
-        <div className="hidden md:flex space-x-8 text-black text-sm uppercase tracking-wide">
-          {navLinks.map((item, i) => (
-            <Link
-              key={item.name}
-              ref={(el) => (linksRef.current[i] = el)}
-              href={item.href}
-              className="relative group font-NeueMontreal "
-            >
-              {item.name}
-              <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-          ))}
-        </div>
-
-        {/* Mobile Button */}
-        <button
-          className="md:hidden text-black"
-          onClick={() => setIsOpen(!isOpen)}
+        {/* Mobile Hamburger / Triangle Icon Indicator */}
+        <button 
+          onClick={toggleMenu}
+          aria-label="Toggle Navigation"
+          className="md:hidden flex flex-col items-center justify-center focus:outline-none"
         >
-          ☰
+          <div className={`w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-t-[14px] border-t-white transition-transform duration-300 ${isOpen ? 'rotate-180 text-[#82b48c]' : ''}`} />
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      <div
-        ref={mobileMenuRef}
-        className="md:hidden overflow-hidden h-0 opacity-0 bg-black/90"
+      {/* Expandable Mobile Navigation Links (Pushes content down) */}
+      <div 
+        ref={menuRef} 
+        className="h-0 overflow-hidden md:hidden bg-[#032e2a] border-b border-white/5"
       >
-        <div className="flex flex-col items-center space-y-6 py-6 text-white uppercase">
-          {navLinks.map((item) => (
-            <Link key={item.name} href={item.href}>
-              {item.name}
-            </Link>
-          ))}
-        </div>
+        <nav className="flex flex-col items-center justify-center py-8 space-y-6">
+          <a href="#about" onClick={toggleMenu} className="text-2xl font-black tracking-widest uppercase hover:text-[#82b48c] transition-colors">About</a>
+          <a href="#work" onClick={toggleMenu} className="text-2xl font-black tracking-widest uppercase hover:text-[#82b48c] transition-colors">Work</a>
+          <a href="#skills" onClick={toggleMenu} className="text-2xl font-black tracking-widest uppercase hover:text-[#82b48c] transition-colors">Skills</a>
+        </nav>
       </div>
-    </nav>
+    </header>
   );
 }
