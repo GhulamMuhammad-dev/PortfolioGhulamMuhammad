@@ -60,7 +60,7 @@ export default function Hero() {
           {/* Main Composition Asset Image */}
           <div className="relative w-full h-full">
             <Image
-              src="/images/ProfileImageWithTanticals.png" // Ensure your image is placed here
+              src="/Images/ProfileImageWithTanticals.png" // Ensure your image is placed here
               alt="Profile mind map artwork"
               fill
               sizes='600px'
