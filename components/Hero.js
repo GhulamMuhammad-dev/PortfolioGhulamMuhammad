@@ -63,6 +63,7 @@ export default function Hero() {
               src="/images/ProfileImageWithTanticals.png" // Ensure your image is placed here
               alt="Profile mind map artwork"
               fill
+              sizes='600px'
               priority
               className="object-contain"
             />
@@ -101,6 +102,7 @@ export default function Hero() {
             src="/Images/profileImagePortfolio.png"
             alt="Portrait Avatar"
             fill
+            sizes="(max-w-768px) 192px, 240px"
             priority
             className="object-cover" 
           />
