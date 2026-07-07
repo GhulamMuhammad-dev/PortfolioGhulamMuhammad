@@ -70,7 +70,7 @@ export default function Hero() {
 
             {/* WORK Button Overlay (Left tentacle tip) */}
             <a
-              href="#work"
+              href="/work"
               className="tentacle-btn absolute top-[36%] left-[10%] bg-[#82b48c] text-[#0b1b11] font-black tracking-wider uppercase px-4 py-1.5 rounded text-xs lg:text-sm -rotate-12 border border-[#0b1b11]/20 hover:scale-105 hover:bg-white transition-all duration-200"
             >
               Work
