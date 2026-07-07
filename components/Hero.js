@@ -86,7 +86,7 @@ export default function Hero() {
 
             {/* ABOUT Button Overlay (Right tentacle tip) */}
             <a
-              href="#about"
+              href="/about"
               className="tentacle-btn absolute top-[52%] right-[8%] bg-[#82b48c] text-[#0b1b11] font-black tracking-wider uppercase px-4 py-1.5 rounded text-xs lg:text-sm rotate-12 border border-[#0b1b11]/20 hover:scale-105 hover:bg-white transition-all duration-200"
             >
               About
